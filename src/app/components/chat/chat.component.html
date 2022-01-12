@@ -1,0 +1,27 @@
+<div class="ChatIconContainer" *ngIf="usuarioLogueado && !mostrarChat" (click)="mostrarChat=true">
+    <img src="https://cdn-icons-png.flaticon.com/512/61/61516.png" class="chaticon" alt="">
+</div>
+
+<div class="card text-center card-container" *ngIf="usuarioLogueado && mostrarChat">
+    <div class="card-header">
+        CHAT   
+        <div class="closeIcon" (click)="mostrarChat=false">X</div>
+    </div>
+
+    <div id="contanedor-de-mensajes" class="card-body">
+        <div class="contanedor-de-mensajes h-100">
+
+            <p *ngFor="let mensaje of mensajes" class="msj p-2" [ngClass]="(usuarioLogueado.uid==mensaje.emisor)? 'enviado':'recibido'">
+                {{mensaje.texto}}
+            </p>
+        </div>
+    </div>
+
+    <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensaje()">
+        <input type="text" class="form-control" placeholder="Ingrese su mensaje" [(ngModel)]="nuevoMensaje"[ngModelOptions]="{standalone: true}">
+
+        <div class="input-group-append" (click)="enviarMensaje()">
+            <img class="imgEnviar" width="30px" src="https://icons-for-free.com/iconfiles/png/512/send-1324760547007344042.png" alt="">
+        </div>
+    </form>
+</div>

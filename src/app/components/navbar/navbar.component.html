@@ -1,0 +1,21 @@
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img class="b" src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png?hl=es" alt="">
+      Bootstrap
+    </a>
+
+    <div ngbDropdown class="d-inline-block" *ngIf="userlogged|async as user; else btningresar">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        <img *ngIf="user.photoURL" class="m b" src="{{user.photoURL}}" alt="">
+        {{user.displayName?user.displayName : user.email}} 
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="logout()" routerLink="/login">Salir</button>
+      </div>
+    </div>
+
+    <ng-template #btningresar>
+      <button class="btn btn-outline-primary" routerLink="/login">Ingresar</button>
+    </ng-template>
+</nav>

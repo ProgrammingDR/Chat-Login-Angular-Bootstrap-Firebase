@@ -1,0 +1,83 @@
+.card-container{
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    right: 0.5rem;
+    bottom:0.5rem;
+}
+
+.card-header{
+    background-color: rgb(102, 102, 243);
+    color: white;
+    font-weight: 700;
+}
+
+.card-body{
+    padding: 0.5rem;
+    background-image: url(https://i.pinimg.com/originals/34/9b/82/349b82d378019dae6befb4a1884957b3.jpg);
+}
+
+.imgEnviar:active{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.imgEnviar:hover{
+    cursor: pointer;
+}
+
+.enviado{
+    display: block;
+    float: right;
+    background-color: teal;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+
+.recibido{
+    display: block;
+    float: left;
+    background-color: gray;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.contanedor-de-mensajes{
+    overflow: scroll;
+    padding: 0.3rem;
+}
+
+.contanedor-de-mensajes::-webkit-scrollbar{
+    display: none;
+}
+
+.ChatIconContainer{
+    position: fixed;
+    right: 0.5rem;
+    bottom:0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: rgb(167, 167, 167);
+    border-radius: 100%;
+    box-shadow: 0 0 10px 2px rgb(71,71,71);
+}
+.chaticon{
+    width: 40px;
+    height: 40px;
+}
+
+.closeIcon{
+    position: absolute;
+    right: 0.5rem;
+    top: 0rem;
+    cursor: pointer;
+}
